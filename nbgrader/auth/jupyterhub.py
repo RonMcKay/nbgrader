@@ -25,8 +25,8 @@ def get_jupyterhub_api_url() -> str:
 
 
 def get_jupyterhub_authorization() -> dict:
-    if os.getenv('JUPYTERHUB_API_TOKEN'):
-        api_token = os.environ['JUPYTERHUB_API_TOKEN']
+    if os.getenv('JUPYTERHUB_API_TOKEN_CUSTOM'):
+        api_token = os.environ['JUPYTERHUB_API_TOKEN_CUSTOM']
     else:
         raise JupyterhubEnvironmentError("JUPYTERHUB_API_TOKEN env is required to run the exchange features of nbgrader.")
     return {
