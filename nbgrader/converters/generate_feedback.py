@@ -57,7 +57,7 @@ class GenerateFeedback(BaseConverter):
         c = Config()
         if 'template_file' not in self.config.HTMLExporter:
             c.HTMLExporter.template_file = 'feedback.html.j2'
-        if 'template_path' not in self.config.HTMLExporter:
+        if 'template_paths' not in self.config.HTMLExporter:
             template_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'server_extensions', 'formgrader', 'templates'))
-            c.HTMLExporter.template_path = ['.', template_path]
+            c.HTMLExporter.template_paths = ['.', template_path]
         self.update_config(c)
