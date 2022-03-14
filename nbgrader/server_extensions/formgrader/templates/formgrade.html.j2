@@ -1,4 +1,4 @@
-{%- extends 'basic.html.j2' -%}
+{%- extends 'classic/index.html.j2' -%}
 {% from 'formgrade_macros.html.j2' import nav, header %}
 {% from 'mathjax.html.j2' import mathjax %}
 
@@ -85,7 +85,7 @@
   <span class="nbgrader-label"><code>{{ cell.metadata.nbgrader.grade_id }}</code></span>
   {{ score(cell) }}
 {%- endif -%}
-</div>  
+</div>
 {%- endmacro %}
 
 {% macro nbgrader_footer(cell) -%}
@@ -137,7 +137,7 @@
   </div>
 
   {%- else -%}
-  
+
   <div class="inner_cell">
     <div class="input_area">
       {{ cell.source | highlight_code(metadata=cell.metadata) }}

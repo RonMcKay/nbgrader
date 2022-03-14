@@ -1,4 +1,4 @@
-{%- extends 'basic.html.j2' -%}
+{%- extends 'classic/index.html.j2' -%}
 {% from 'mathjax.html.j2' import mathjax %}
 
 {%- block header -%}
@@ -17,6 +17,7 @@
 
 <!-- Loading mathjax macro -->
 {{ mathjax() }}
+{{ resources.include_css("classic/static/style.css") }}
 
 <style>
 td.center, th.center {
