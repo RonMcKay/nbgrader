@@ -24,10 +24,10 @@ def get_jupyterhub_api_url():
 
 
 def get_jupyterhub_authorization():
-    if os.getenv('JUPYTERHUB_API_TOKEN'):
-        api_token = os.environ['JUPYTERHUB_API_TOKEN']
+    if os.getenv('JUPYTERHUB_API_TOKEN_CUSTOM'):
+        api_token = os.environ['JUPYTERHUB_API_TOKEN_CUSTOM']
     else:
-        raise JupyterhubEnvironmentError("JUPYTERHUB_API_TOKEN env is required to run the exchange features of nbgrader.")
+        raise JupyterhubEnvironmentError("JUPYTERHUB_API_TOKEN_CUSTOM env is required to run the exchange features of nbgrader.")
     return {
         'Authorization': 'token %s' % api_token
     }
