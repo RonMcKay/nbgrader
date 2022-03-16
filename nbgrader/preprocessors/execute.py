@@ -65,6 +65,8 @@ class Execute(NbGraderPreprocessor, ExecutePreprocessor):
             if cell.cell_type != 'code' or not cell.source.strip():
                 return cell, resources
 
+            exec_output = self.execute_cell(cell, cell_index, store_history)
+            self.log.warning(exec_output)
             reply, outputs = self.run_cell(cell, cell_index, store_history)
             # Backwards compatibility for processes that wrap run_cell
             cell.outputs = outputs
